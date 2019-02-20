@@ -1,0 +1,109 @@
+body {
+    font-family: Tahoma, Helvetica, "\5b8b\4f53", "Arial", sans-serif;
+    font-size: 12px;
+    color: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ul{
+    list-style: none;
+}
+a:link,
+a:hover,
+a:visited{
+    text-decoration: none;
+}
+/* 大盒子 */
+.polaroids {
+    width: 970px;
+    margin: 0 0 18px 10px;
+}
+.polaroids li {
+    display: inline;
+}
+.polaroids a{
+    background-color: #fff;
+    float: left;
+    margin: 0 0 27px 30px;
+    padding: 10px 10px 15px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+    -o-box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+}
+.polaroids img {
+    display: block;
+    width: 190px;
+    margin-bottom: 12px;
+}
+.polaroids a:after {
+    content: attr(title);
+    /* Ie8+,FF,Chorme,Safari */
+}
+/* 偶数的li */
+.polaroids li:nth-child(even) a {
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+/* 3的倍数的li */
+.polaroids li:nth-child(3n) a {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: rotate(2deg);
+    transform: none;
+    position: relative;
+    top: -5px;
+}
+/* 5n */
+.polaroids li:nth-child(5n) a {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+    position: relative;
+    right: 5px;
+}
+/* 8n */
+.polaroids li:nth-child(8n) a {
+    position: relative;
+    top: 8px;
+    right: 5px;
+}
+/* 11n */
+.polaroids li:nth-child(11n) a {
+    position: relative;
+    top: 3px;
+    right: -5px;
+}
+/* 鼠标经过时 */
+.polaroids li a:hover {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    -o-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    position: relative;
+    z-index: 5;
+}
+/* 最后一张图片 */
+.polaroids li.messy a {
+    margin-top: -375px;
+    margin-left: 160px;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
