@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #EFEFEF;
+}
+/* 大盒子 */
+.box{
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+/* 每个小盒子 */
+.container{
+    /* 设置元素被查看位置的视图 */
+    /* 当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。 */
+    perspective: 1200px;
+    width: 33%;
+    float: left;
+}
+.container figure{
+    position: relative;
+    /* transform-style 属性规定如何在 3D 空间中呈现被嵌套的元素。 */
+    /* flat:子元素不保留其3D位置，preserve-3d：子元素保留其3D位置 */
+    transform-style: preserve-3d;
+    transition: 1s transform;
+    font-size: 1.6rem;
+    margin: 25px;
+}
+.container figure img{
+    width: 100%;
+    height: auto;
+}
+
+/* 文字描述 */
+/* 文字相对于图片相对定位 */
+.container figure figcaption{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /* 转、圈（Turns）。一个圆共1圈
+    90deg = 100grad = 0.25turn ≈ 1.570796326794897rad */
+    /* 将文字沿y轴旋转180度 */
+    transform: rotateY(.5turn) translateZ(1px);
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding-top: 45%;
+    opacity: 0.6;
+    transition: 1s .5s opacity;
+}
+
+/* 动画效果 */
+/* 图片文字一起演y轴旋转180d度 */
+.container:hover figure{
+    transform: rotateY(.5turn);
+}
+/* 文字的透明度值变大 */
+.container:hover figure figcaption{
+    opacity: 1;
+}
+.container figure:after{
+    content: " ";
+    display: block;
+    /* vw：相对于视窗宽度（viewpoint width）。如：height：100vw；且此时的视窗宽为200px，则height：（100*200）/100。 */
+    height: 8vw;
+    width: 100%;
+    transform: rotateX(90deg);
+    /* radial-gradient() 函数用径向渐变创建 "图像"。
+    径向渐变由中心点定义。
+    为了创建径向渐变你必须设置两个终止色。 */
+    background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
