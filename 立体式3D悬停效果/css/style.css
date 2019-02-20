@@ -1,0 +1,54 @@
+body{
+    /* border: none; */
+    margin: 0;
+    background-color: #0D3462;
+}
+/* 大盒子 */
+.box{
+    width: 1000px;
+    margin: auto;
+    margin-top: 2em;
+}
+/* 图片所在盒子 */
+.container{
+    /* 设置元素被查看位置的视图 */
+    -webkit-perspective: 400;
+    -moz-perspective: 400;
+    float: left;
+    width: 220px;
+    margin-right: 20px;
+}
+.film{
+    width: 100%;
+    height: 300px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 1.5s;
+    -moz-transform-style: preserve-3d;
+    -moz-transition: 1.5s;
+}
+.container:hover .film{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+
+}
+/* 正反面图片盒子 */
+.face{
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+/* 文字 */
+.face h3{
+    color: white;
+    text-align: center;
+}
+
+/* 反面 */
+.back{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdbb5a), to(#db5726));
+    background: -moz-linear-gradient(top, #fdbb5a, #db5726);
+    width: 220px;
+    height: 300px;
+}
