@@ -1,0 +1,16 @@
+设置背景颜色
+大盒子里面一个em标签--设置宽高，居中，背景图片为雷达的加号，相对定位
+散射效果使用伪元素实现---一个大圆
+ ：宽高，radius，阴影，层级高一点，透明度为0，设置动画向外扩散
+
+
+transition 属性是一个简写属性，用于设置四个过渡属性：
+transition-property：过渡效果的 CSS 属性的名称
+transition-duration：完成过渡效果需要多少秒或毫秒。
+transition-timing-function：速度效果的速度曲线
+transition-delay：过渡效果何时开始。
+
+animation:表示动画
+
+通过animation设置扩散的时间
+通过transform：scale（1.2）设置扩散的大小
